@@ -19,9 +19,6 @@ export class ArtistRegistrationFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.createRegistrationForm();
-    this._artistService.artistRegistrationStore.subscribe((state) => {
-      console.log(state);
-    });
   }
 
   createRegistrationForm() {
@@ -111,6 +108,7 @@ export class ArtistRegistrationFormComponent implements OnInit {
         form: this.registrationForm.getRawValue(),
       }));
       this._artistService.validateFormFields(this.registrationForm);
+      console.log(this.registrationForm)
     }
   }
 }

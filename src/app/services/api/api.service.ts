@@ -21,7 +21,7 @@ export class ApiService {
       const header = this._prepareHeaders(true);
       return this._http.get<T>(url, { headers: header });
     }
-    return this._http.get<T>(url);
+    return this._http.get<T>(url, {headers: this.httpOptions.headers});
   }
 
   public post<T>(url: string, body: any): Observable<any> {

@@ -16,11 +16,8 @@ export class LoginService {
     const queryParams = `?response_type=token&client_id=${env.client_id}&scope=${env.scope}&redirect_uri=${env.redirect_uri}&state=${this.state} `;
     return this.apiService.get<any>(url + queryParams).pipe(
       catchError((error) => {
-        if (error.status === 200) {
-          window.location = error.url;
-        } else {
-          return error;
-        }
+        window.location = error.url;
+        return error;
       })
     );
   }
