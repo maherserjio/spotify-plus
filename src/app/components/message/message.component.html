@@ -1,0 +1,13 @@
+<div  class="items-center flex justify-center md:gap-28 gap-16 pt-12">
+    <div class="text-[13px] md:text-lg  w-full xl:w-1/2 relative pb-12 lg:pb-0">
+        <div class="flex items-center justify-center">
+            <div >
+                <h2 *ngIf="data.title" class="my-2 text-gray-800 font-bold lg:text-2xl">
+                {{data.title}}
+                </h2>
+                <p  *ngIf="data.content" class="my-2 text-gray-800">{{data.content}}</p>
+            </div>
+        </div>
+
+    </div>
+</div>

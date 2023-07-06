@@ -1,0 +1,175 @@
+<section class="max-w-4xl p-6 mx-auto bg-[#1DB954] rounded-md shadow-md dark:bg-gray-800 mt-20">
+  <h1 class="text-xl font-bold text-white capitalize dark:text-white">Artist Registration</h1>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+      <div>
+        <label class="text-white dark:text-gray-200" for="firstName">FirstName*</label>
+        <input formControlName="firstName" id="firstName" type="text"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+        <p class="text-red-700 text-xs"
+          *ngIf="registrationForm.controls['firstName']?.errors?.['required'] && registrationForm.controls['firstName']?.touched ">
+          firstName is required</p>
+      </div>
+
+      <div>
+        <label class="text-white dark:text-gray-200" for="lastName">LastName*</label>
+        <input formControlName="lastName" id="lastName" type="text"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+        <p class="text-red-700 text-xs"
+          *ngIf="registrationForm.controls['lastName']?.errors?.['required'] && registrationForm.controls['lastName']?.touched ">
+          lastName is required</p>
+
+      </div>
+
+      <div>
+        <label class="text-white dark:text-gray-200" for="dob">Date of birth*</label>
+        <input formControlName="dob" id="dob" type="date"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+        <p class="text-red-700 text-xs"
+          *ngIf="registrationForm.controls['dob']?.errors?.['required'] && registrationForm.controls['dob']?.touched ">
+          date of birth is required</p>
+      </div>
+
+      <div>
+        <label class="text-white dark:text-gray-200" for="phone">Phone*</label>
+        <input formControlName="phone" id="phone" type="text"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+        <p class="text-red-700 text-xs"
+          *ngIf="registrationForm.controls['phone']?.errors?.['required'] && registrationForm.controls['phone']?.touched ">
+          phone number is required</p>
+      </div>
+
+      <div>
+        <label class="text-white dark:text-gray-200" for="email">Email*</label>
+        <input formControlName="email" id="email" type="email"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+        <p class="text-red-700 text-xs"
+          *ngIf="registrationForm.controls['email']?.errors?.['required'] && registrationForm.controls['email']?.touched ">
+          email is required</p>
+      </div>
+
+      <div>
+        <label class="text-white dark:text-gray-200" for="stageName">StageName</label>
+        <input formControlName="stageName" id="stageName" type="text"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+      </div>
+
+      <div>
+        <label class="text-white dark:text-gray-200" for="backstory">Artist BackStory</label>
+        <textarea formControlName="backstory" id="backstory" type="textarea"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"></textarea>
+      </div>
+
+      <div>
+        <label class="text-white dark:text-gray-200" for="startingDate">Starting Date</label>
+        <input formControlName="startingDate" id="startingDate" type="date"
+          class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-white">
+          Profile Picture*
+        </label>
+        <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+          <div class="space-y-1 text-center">
+            <svg class="mx-auto h-12 w-12 text-white" stroke="currentColor" fill="none" viewBox="0 0 48 48"
+              aria-hidden="true">
+              <path
+                d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div class="flex text-sm text-gray-600">
+              <label for="profilePicture"
+                class="relative cursor-pointer  rounded-md font-medium text-black hover:text-white focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                <span>Upload profile Image</span>
+                <input formControlName="profilePicture" id="profilePicture" type="file" accept="image/*"
+                  class="sr-only">
+              </label>
+            </div>
+            <p class="w-min text-xs text-white" *ngIf="registrationForm.controls['profilePicture']?.valid">
+              {{registrationForm.controls['profilePicture'].value}}</p>
+            <p class="text-red-700 text-xs"
+              *ngIf="registrationForm.controls['profilePicture']?.errors?.['required'] && registrationForm.controls['profilePicture']?.touched ">
+              profile picture is required</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="mt-6 mb-6">
+
+    <div class="flex justify-start mb-6">
+      <button
+        class="bg-black px-6 py-2 leading-5 text-white transition-colors duration-200 transform rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-600"
+        (click)="addAlbum()">Add Album</button>
+    </div>
+
+    <ng-container *ngFor="let albumFormGroup of getAlbums(); let i = index">
+      <div [formGroup]="albumFormGroup">
+        <div>
+          <label class="block text-sm font-medium text-white">
+            Album Picture*
+          </label>
+          <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+            <div class="space-y-1 text-center">
+              <svg class="mx-auto h-12 w-12 text-white" stroke="currentColor" fill="none" viewBox="0 0 48 48"
+                aria-hidden="true">
+                <path
+                  d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div class="flex text-sm text-gray-600">
+                <label for="albumPicture"
+                  class="relative cursor-pointer  rounded-md font-medium text-black hover:text-white focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                  <span>Upload Album Image</span>
+                  <input formControlName="albumPicture" id="albumPicture" type="file" accept="image/*" class="sr-only">
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ng-container *ngFor="let songAlbumGroup of getAlbumSongs(i); let j = index">
+          <div [formGroup]="songAlbumGroup">
+            <button
+            class="mt-2 mb-2 bg-black px-6 py-2 leading-5 text-white transition-colors duration-200 transform rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-600"
+            (click)="addSongToAlbum(i)">Add Song</button>
+  
+            <div>
+              <label class="text-white dark:text-gray-200" for="songName">Song Name</label>
+              <input formControlName="songName" id="songName" type="text"
+                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+            </div>
+
+            <div>
+              <label class="text-white dark:text-gray-200" for="songDuration">Song Duration</label>
+              <input formControlName="songDuration" id="songDuration" type="text"
+                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+            </div>
+          </div>
+
+          <button
+            class="mt-2 mb-2 bg-black px-6 py-2 leading-5 text-white transition-colors duration-200 transform rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-600"
+            (click)="removeSongFromAlbum(i)">remove Song</button>
+        </ng-container>
+
+
+
+
+
+        <div class="flex justify-start mt-6 mb-6">
+          <button
+            class="bg-black px-6 py-2 leading-5 text-white transition-colors duration-200 transform rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-600"
+            (click)="removeAlbum(i)">remove Album</button>
+        </div>
+
+      </div>
+    </ng-container>
+
+
+    <div class="flex justify-end mt-6">
+      <button
+        class="bg-white px-6 py-2 leading-5 text-black transition-colors duration-200 transform rounded-md hover:bg-gray-300 focus:outline-none focus:bg-gray-600">Register</button>
+    </div>
+  </form>
+</section>
