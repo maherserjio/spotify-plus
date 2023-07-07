@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { env } from 'src/app/environments/environment';
 import { ApiService } from 'src/app/services/api/api.service';
 import { catchError } from 'rxjs/operators';
@@ -14,12 +14,7 @@ export class LoginService {
   requestAccessToken(): Observable<unknown> {
     const url = env.authorizeTokenBaseUrl + '/authorize';
     const queryParams = `?response_type=token&client_id=${env.client_id}&scope=${env.scope}&redirect_uri=${env.redirect_uri}&state=${this.state} `;
-    return this.apiService.get<any>(url + queryParams).pipe(
-      catchError((error) => {
-        window.location = error.url;
-        return error;
-      })
-    );
+    return this.apiService.get<any>(url + queryParams);
   }
 
   generateRandomString(randomLength: number): string {

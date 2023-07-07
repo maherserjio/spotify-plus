@@ -46,6 +46,11 @@ export class LoginComponent {
   }
 
   onLogin(): void {
-    this._loginService.requestAccessToken().subscribe();
+    this._loginService.requestAccessToken().subscribe({
+      next: (response: any) => {},
+      error: (error) => {
+        window.location = error.url;
+      },
+    });
   }
 }

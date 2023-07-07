@@ -9,6 +9,9 @@
         <p class="text-red-700 text-xs"
           *ngIf="registrationForm.controls['firstName']?.errors?.['required'] && registrationForm.controls['firstName']?.touched ">
           firstName is required</p>
+          <p class="text-red-700 text-xs"
+          *ngIf="registrationForm.controls['firstName']?.errors?.['minlength'] && registrationForm.controls['firstName']?.touched ">
+          firstName should be greater than 3 characters</p>
       </div>
 
       <div>
@@ -18,7 +21,9 @@
         <p class="text-red-700 text-xs"
           *ngIf="registrationForm.controls['lastName']?.errors?.['required'] && registrationForm.controls['lastName']?.touched ">
           lastName is required</p>
-
+          <p class="text-red-700 text-xs"
+          *ngIf="registrationForm.controls['lastName']?.errors?.['minlength'] && registrationForm.controls['lastName']?.touched ">
+          lastName should be greater than 3 characters</p>
       </div>
 
       <div>

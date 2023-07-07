@@ -18,7 +18,7 @@ export class ArtistSearchComponent implements OnInit {
   }
 
   listenToSearchTermValueChanges(): void {
-    this.searchForm.valueChanges.subscribe((value) => {
+    this.searchForm.valueChanges.subscribe((value: { searchTerm: string }) => {
       if (value.searchTerm.trim() !== '') {
         this.searchSubmited.emit(value.searchTerm);
       } else {

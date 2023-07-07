@@ -41,7 +41,6 @@ export class ArtistComponent implements OnInit {
           this.checkArtistsAvailability();
           this.buildRefactoredArtistDetails();
           this.showLoading = false;
-          console.log(this.artists);
         },
         error: (error) => {
           // error handling goes here
